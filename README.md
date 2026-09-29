@@ -12,7 +12,7 @@ The running app is the PHP files at the repository root. A request hits a script
 
 `config/db.php` opens a mysqli connection. It currently uses host `localhost`, user `root`, an empty password, and database name `cinema_db`. Point the app at your own server by changing those four values in that file. Do not commit a real password.
 
-This repository does not include a schema or SQL file. The movie queries use `id`, `title`, `genre`, `duration`, `rating`, and `release_date`. The user queries use `id`, `username`, `password`, `full_name`, `email`, and, on the list page, `created_at`.
+`schema.sql` at the repository root creates the empty `movies` and `users` tables only. It has no rows. Movie columns are `id`, `title`, `genre`, `duration`, `rating`, `release_date`, and `created_at`. User columns are `id`, `username`, `password`, `full_name`, `email`, and `created_at`. Do not commit a real database password, and do not commit a dump that contains rows.
 
 ## Login and session
 

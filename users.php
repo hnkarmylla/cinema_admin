@@ -43,7 +43,7 @@ $users = mysqli_stmt_get_result($stmt);
                 <td><?php echo htmlspecialchars($u['created_at']); ?></td>
                 <td class="center">
                     <a href="edit_user.php?id=<?php echo $u['id']; ?>" class="btn-small blue waves-effect waves-light"><i class="material-icons">edit</i></a>
-                    <a href="delete_user.php?id=<?php echo $u['id']; ?>" onclick="return confirm('Delete this user?');" class="btn-small red waves-effect waves-light"><i class="material-icons">delete</i></a>
+                    <button type="button" class="btn-small red waves-effect waves-light" data-remove data-action="delete_user.php" data-id="<?php echo (int) $u['id']; ?>" data-title="Remove this user?" aria-label="Remove this user"><i class="material-icons">delete</i></button>
                 </td>
             </tr>
         <?php endwhile; ?>

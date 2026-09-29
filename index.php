@@ -46,7 +46,7 @@ $movies = mysqli_stmt_get_result($stmt);
                 <td><?php echo htmlspecialchars($row['release_date']); ?></td>
                 <td class="center">
                     <a href="edit_movie.php?id=<?php echo $row['id']; ?>" class="btn-small blue waves-effect waves-light"><i class="material-icons">edit</i></a>
-                    <a href="delete_movie.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Delete this movie?');" class="btn-small red waves-effect waves-light"><i class="material-icons">delete</i></a>
+                    <button type="button" class="btn-small red waves-effect waves-light" data-remove data-action="delete_movie.php" data-id="<?php echo (int) $row['id']; ?>" data-title="Remove this movie?" aria-label="Remove this movie"><i class="material-icons">delete</i></button>
                 </td>
             </tr>
         <?php endwhile; ?>

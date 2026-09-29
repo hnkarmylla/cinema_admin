@@ -43,6 +43,7 @@ if (isset($_POST['login'])) {
                         }
                     }
                 }
+                session_regenerate_id(true);
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 header("Location: index.php");

@@ -114,7 +114,7 @@
       var year = yearOf(movie);
       return (
         '<article class="card">' +
-          '<div class="poster" aria-hidden="true"><span>' + esc(movie.title) + "</span></div>" +
+          '<div class="poster" aria-hidden="true"></div>' +
           "<h2>" + esc(movie.title) + "</h2>" +
           '<p class="meta">' + esc(year) + " · " + esc(movie.genre) + " · " + esc(movie.duration) + " min</p>" +
           '<div class="card-actions">' +

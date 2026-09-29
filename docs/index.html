@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinema Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p class="banner">Static demo — real admin will be CodeIgniter 4 on PHP. This page does not talk to a database.</p>
+  <div id="flash" class="flash" hidden></div>
+  <div id="app"></div>
+
+  <div id="dialog" class="backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <h2 id="dialog-title">Remove this movie?</h2>
+      <p id="dialog-copy" class="muted"></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn ghost" id="dialog-cancel">Cancel</button>
+        <button type="button" class="btn primary" id="dialog-remove">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

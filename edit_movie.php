@@ -5,10 +5,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 require_once 'config/db.php';
+require_once __DIR__ . '/includes/csrf.php';
 
 $id = $_GET['id'] ?? null;
 
-if (isset($_POST['update'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update']) && csrf_is_valid(isset($_POST['csrf_token']) ? $_POST['csrf_token'] : null)) {
     $id = $_POST['id'];
     $title = trim($_POST['title']);
     $genre = trim($_POST['genre']);
@@ -39,6 +40,7 @@ $movie = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
             <div class="card-content">
                 <span class="card-title red-text">Edit Movie</span>
                 <form action="edit_movie.php" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
                     <input type="hidden" name="id" value="<?php echo $movie['id']; ?>">
                     <div class="input-field">
                         <input type="text" name="title" value="<?php echo htmlspecialchars($movie['title']); ?>" required>
